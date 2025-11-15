@@ -571,6 +571,11 @@ section.card {
         justify-content: space-between;
         gap: 0.75rem;
         padding: 0.5rem 0.75rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
     }
 
     .nav-spacer {
@@ -596,8 +601,16 @@ section.card {
         width: 6.25rem;
     }
 
+    .wrap {
+        height: 100vh;
+        min-height: 100vh;
+        padding-top: var(--nav-height);
+        padding-bottom: calc(var(--footer-height) + var(--nav-height));
+    }
+
     .grid {
         grid-template-columns: 1fr;
+        height: 100%;
     }
 
     aside.sidebar {
@@ -606,10 +619,15 @@ section.card {
 
     section.card {
         order: 2;
+        height: 100%;
+        border-left: none;
     }
 
     .content {
-        padding: 1rem 0.875rem calc(var(--footer-height) + var(--nav-height) + 1rem);
+        padding: 1rem 0.875rem;
+        overflow-y: auto;
+        height: calc(100% - 3.5rem);
+        -webkit-overflow-scrolling: touch;
     }
 
     #keyboardHint {
@@ -637,11 +655,20 @@ section.card {
 
     .hint {
         font-size: 0.75rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hint-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .btn-row {
         justify-content: flex-end;
         gap: 0.5rem;
+        flex-shrink: 0;
     }
 
     .btn {
@@ -655,7 +682,7 @@ section.card {
     .btn.brand {
         padding: 0.5rem 1rem;
         font-size: 0.9375rem;
-        background: var(--brand);
+        background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);
         box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.35);
     }
 
@@ -663,7 +690,9 @@ section.card {
         position: fixed;
         bottom: 0;
         left: 0;
+        right: 0;
         width: 100%;
         box-shadow: 0 -0.1875rem 0.5rem rgba(15, 23, 42, 0.06);
+        z-index: 900;
     }
 }
