@@ -195,7 +195,6 @@ header.navbar {
     height: 100vh;
     min-height: 100vh;
     padding-top: var(--nav-height);
-    padding-bottom: calc(var(--footer-height) + var(--foot-height));
 }
 
 .grid {
@@ -215,6 +214,7 @@ aside.sidebar {
     flex-direction: column;
     min-height: 0;
     overflow: hidden;
+    height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
 
 .side-head {
@@ -326,6 +326,7 @@ section.card {
 
 .content {
     padding: clamp(1rem, 3vw, 1.75rem);
+    padding-bottom: calc(var(--foot-height) + var(--footer-height) + 1rem);
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
@@ -588,6 +589,10 @@ section.card {
         grid-template-columns: 13.125rem 1fr;
     }
 
+    aside.sidebar {
+        height: calc(100vh - var(--nav-height) - var(--footer-height));
+    }
+
     .foot {
         left: 13.125rem;
     }
@@ -643,6 +648,7 @@ section.card {
 
     .content {
         padding: 1rem 0.875rem;
+        padding-bottom: calc(var(--foot-height) + var(--footer-height) + 1rem);
     }
 
     #keyboardHint {
