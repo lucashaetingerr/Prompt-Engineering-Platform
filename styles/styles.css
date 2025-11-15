@@ -591,9 +591,7 @@ section.card {
     }
 
     aside.sidebar {
-        order: 1;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
+        display: none;
     }
 
     section.card {
