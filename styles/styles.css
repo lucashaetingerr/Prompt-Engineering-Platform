@@ -11,6 +11,8 @@
     --code-bg: #0f172a;
     --shadow: 0 0.5rem 1.5rem rgba(2, 8, 23, 0.07);
     --radius: 1rem;
+    --footer-height: 2.1rem;
+    --nav-height: 3.2rem;
 }
 
 * {
@@ -353,7 +355,6 @@ section.card {
     padding: 0.75rem 1rem;
     border-top: 1px solid var(--border);
     background: #ffffff;
-    margin-bottom: 2.5rem;
 }
 
 .hint {
@@ -499,12 +500,9 @@ section.card {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     z-index: 900;
     box-shadow: 0 -0.1875rem 0.5rem rgba(15, 23, 42, 0.06);
+    height: var(--footer-height);
 }
 
 .footer-inner {
@@ -611,7 +609,7 @@ section.card {
     }
 
     .content {
-        padding: 1rem 0.875rem 7rem;
+        padding: 1rem 0.875rem calc(var(--footer-height) + var(--nav-height) + 1rem);
     }
 
     #keyboardHint {
@@ -620,7 +618,7 @@ section.card {
 
     .foot {
         position: fixed;
-        bottom: 2.1rem;
+        bottom: var(--footer-height);
         left: 0;
         right: 0;
         margin: 0;
@@ -634,6 +632,7 @@ section.card {
         justify-content: space-between;
         gap: 0.5rem;
         z-index: 950;
+        height: var(--nav-height);
     }
 
     .hint {
@@ -664,6 +663,7 @@ section.card {
         position: fixed;
         bottom: 0;
         left: 0;
+        width: 100%;
         box-shadow: 0 -0.1875rem 0.5rem rgba(15, 23, 42, 0.06);
     }
 }
