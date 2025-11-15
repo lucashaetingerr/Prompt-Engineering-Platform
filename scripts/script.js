@@ -524,8 +524,8 @@ function init() {
 
 function loadContent() {
     Promise.all([
-        fetch('../prompt-engineering-content/prompt_trilha_pt.json').then(r => r.json()),
-        fetch('../prompt-engineering-content/prompt_trilha_en.json').then(r => r.json())
+        fetch('prompt-engineering-content/prompt_trilha_pt.json').then(r => r.json()),
+        fetch('prompt-engineering-content/prompt_trilha_en.json').then(r => r.json())
     ])
         .then(([pt, en]) => {
             conteudos.pt = pt;
